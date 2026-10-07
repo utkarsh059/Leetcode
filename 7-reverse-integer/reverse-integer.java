@@ -1,6 +1,8 @@
 class Solution {
     public int reverse(int x) {
         int ans=0;
+        //use long for rev coz x ko reverse krne ke baad 
+        //overflow ho skta h
         long rev=0;
         int original=x;
         double y=-Math.pow(2,31);
