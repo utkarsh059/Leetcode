@@ -4,6 +4,7 @@ class Solution {
         int open=0;
         int close=0;
         int max=0;
+        //left to right
         for(int i=0;i<n;i++){
             char ch=s.charAt(i);
             if(ch=='('){
@@ -22,6 +23,7 @@ class Solution {
         }
         open=0;
         close=0;
+        //right to left
          for(int i=n-1;i>=0;i--){
             char ch=s.charAt(i);
             if(ch=='('){
