@@ -8,9 +8,11 @@ class Solution {
                 open++;
             }
             else{
+                //if(ch==')')
               if(open>0){
                 open--;
               }
+              //empty
               else{
                 addn++;
               }
