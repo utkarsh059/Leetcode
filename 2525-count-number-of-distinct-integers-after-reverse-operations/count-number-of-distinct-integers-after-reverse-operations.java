@@ -10,6 +10,7 @@ class Solution {
     }
     public int countDistinctIntegers(int[] nums) {
         int n=nums.length;
+        //count will start from 1 coz 0th element will always count
         int count=1;
         int arr[]=new int[2*n];
         for(int i=0; i<n; i++){
