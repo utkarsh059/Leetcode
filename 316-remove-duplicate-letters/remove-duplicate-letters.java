@@ -1,30 +1,28 @@
 class Solution {
     public String removeDuplicateLetters(String s) {
-        Deque<Character> st= new ArrayDeque<>();
+            Deque<Character> st= new ArrayDeque<>();
         int arr[]=new int [26];
         for(int i=0; i<s.length(); i++){
             char ch=s.charAt(i);
             arr[ch-'a']++;
         }
-        int freq []=new int[26];
+        int visited []=new int[26];
 
         for(int i=0; i<s.length(); i++){
             char ch=s.charAt(i);
             arr[ch-'a']--;
-            if(freq[ch-'a']==1){
+            if(visited[ch-'a']==1){
                 continue;
             }
             while(!st.isEmpty() && st.peek()>ch&& arr[st.peek()-'a']>0){
-                freq[st.peek()-'a']=0;
+                visited[st.peek()-'a']=0;
                 st.pop();
     
             }
-            if(freq[ch-'a']==0){
+            if(visited[ch-'a']==0){
                 st.push(ch);
-                freq[ch-'a']=1;
+                visited[ch-'a']=1;
             }
-           
-
         }
         StringBuilder ans= new StringBuilder();
         while(!st.isEmpty()){
@@ -33,6 +31,5 @@ class Solution {
 
         }
         return ans.reverse().toString();
-        
     }
 }
